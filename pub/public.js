@@ -4,7 +4,7 @@ $(function() {
     <div class="nav">
         <div class="nav-signin nav-item"><a href="../login/signin.html">登录</a></div>
         <div class="nav-upload nav-item disabled"><a href="../upload/upload.html">创建查询</a></div>
-        <div class="nav-guestquery nav-item"><a href="../guestquery/guestquery.html">查询</a></div>
+        <div class="nav-guestquery nav-item"><a href="../guestquery/guestQuery.html">查询</a></div>
         <div class="nav-result nav-item disabled"><a href="../result/result.html">查询结果</a></div>
     </div>
     <div class="user unshow">
