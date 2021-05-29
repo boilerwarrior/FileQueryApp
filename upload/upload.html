@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Query</title>
+    <link rel="stylesheet" href="../pub/common.css">
+    <script src="../source/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.10.1/dist/av.js"></script>
+    <script src="../pub/CloudInit.js"></script>
+    <script src="../pub/public.js"></script>
+    <script src="https://cdn.bootcss.com/xlsx/0.11.5/xlsx.core.min.js"></script>
+    <script src="../source/laydate/laydate.js"></script>
+    <script src="./upload.js"></script>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="header-wrapper"></div>
+        <h2>File Query </h2>
+        <div class="form-w">
+            <form class="form-loadup form">
+                <input type="file" id="file" class="form-control" multiple>
+                <input type="text" class="form-control" id="time" placeholder="请输入查询截止时间">
+                <input type="text" class="form-control" id="des" placeholder="请输入本次创建查询描述">
+                <button type="submit" class='btn form-control btn_sub'>上传文件</button>
+            </form>
+        </div>
+        <div class="info">
+            <div class="info-alarm unshow">未选择文件或日期</div>
+            <div class="info-query"></div>
+        </div>
+    </div>
+</body>
+
+</html>

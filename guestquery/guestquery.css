@@ -1,0 +1,19 @@
+.wrong {
+    color: red;
+}
+
+.info-data {
+    margin-top: 20px;
+}
+
+.table-con {
+    margin: 20px auto;
+}
+
+.table-con table {
+    margin: 0 auto;
+}
+
+.item {
+    padding-top: 10px;
+}

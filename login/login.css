@@ -1,0 +1,21 @@
+.btn:hover {
+    cursor: pointer;
+}
+
+.active:hover {
+    cursor: default;
+}
+
+.info {
+    color: red;
+}
+
+.status-w {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.sign-btn {
+    padding: 10px;
+}

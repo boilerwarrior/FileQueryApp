@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Query</title>
+    <link rel="stylesheet" href="../pub/common.css">
+    <link rel="stylesheet" href="./guestquery.css">
+    <script src="../source/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.10.1/dist/av.js"></script>
+    <script src="../pub/CloudInit.js"></script>
+    <script src="../pub/public.js"></script>
+    <script src="./guestQuery.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header-wrapper"></div>
+        <h2>File Query </h2>
+        <div class="query from-w">
+            <form class="form-code form">
+                <input type="text" class="code-code form-control" placeholder='请输入查询码'>
+                <input type="text" class="code-name form-control" placeholder='请输入姓名'>
+                <input type="text" class="code-num form-control" placeholder='请输入学号/关键信息'>
+                <button type="submit" class="code-btn form-control">确定</button>
+                <span class="wrong unshow">输入关键词有误，请重新输入</span>
+            </form>
+            <div class="info-data">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
