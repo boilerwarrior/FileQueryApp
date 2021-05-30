@@ -14,18 +14,24 @@ $(function() {
         };
         /* 调用云函数查询 */
         AV.Cloud.run('query', paramsJson).then(function(files) {
-            console.log(files);
+            if (!files) {
+                $('#keys-warn').removeClass("unshow");
+            }
             let FIndex = 1;
-            for (file of files) {
-                if (!file) {
-                    break;
-                }
+            files.forEach((file) => {
                 var con_item = document.createElement("div");
                 con_item.setAttribute("class", `item_${FIndex++} item`);
+
+                if (JSON.stringify(file) == "{}") {
+                    $(con_item).text("此表无相关数据");
+                    $(".info-data").append(con_item);
+                    return;
+                }
                 /* 生成表格dom */
                 var table_con = document.createElement("div");
                 table_con.setAttribute("class", "table-con");
                 $(table_con).append(`<div class='tab-title'>${file.title}</div>`);
+
                 JstoTb(file.data, table_con); //数据表格化
                 /* 生成信息确认dom */
                 let confirmHtml = `<div class="confirm" iIndex="${file.index}" iId="${file.id}">
@@ -37,16 +43,15 @@ $(function() {
                 $(con_item).append(table_con, confirmHtml); //itemHtml
 
                 $('.info-data').append(con_item);
-            }
+            });
         }, function(err) {
             // 处理报错
-            console.log(err);
+            console.error(err);
         });
     });
 
     /* 绑定确定按钮点击事件 */
     $('.info-data').on('click', '.confirm', function(e) { //动态绑定，绑定到父元素上
-        console.log($(this));
         let isOK;
         if ($(e.target).hasClass('confirm-ok'))
             isOK = 1;
@@ -78,19 +83,9 @@ $(function() {
         }
     }
 
-    function confirm(isOK, $that) {
+    var confirm = function(isOK, $that) {
         const iIndex = $that.attr('iIndex');
         const iId = $that.attr('iId');
-        //const confirmData = { iIndex, isOK }; //{数据所在行数，是否有误}
-
-        // const filedata = AV.Object.createWithoutData('Filedata', iId);
-        // filedata.addUnique('confirm', confirmData);
-        // filedata.save().then(() => {
-        //     $that.addClass('disabled');
-        //     $that.off('click', '.info-data');
-        // }, (err) => {
-        //     console.log('err');
-        // });
         const filedata = new AV.Query('Filedata');
         filedata.get(iId).then((data) => {
             var confirm = data.get('confirm');

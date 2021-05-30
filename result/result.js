@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     $('.nav-result').addClass('active');
     $('.result .queryBtn').on('click', function() {
         createQ($(this)); //点击即查询生成数据Dom
@@ -136,7 +136,7 @@ $(function () {
     var JstoTb2 = function(arr) {
         // const arrH = ["描述", "查询码", "截止时间", "创建时间", "更新时间", "点击查看详细信息"]
         let arrLen = arr.length;
-        const curT = Date();
+        const curT = new Date();
         let tr_head = `<tr>
                             <th>描述</th>
                             <th>查询码</th>
@@ -160,7 +160,7 @@ $(function () {
                                 <td class="text-center delQ-btn btn">删除</td>
                             </tr>
                             `;
-            if (exptime < curT) {
+            if (exptime > curT) {
                 unfiInHtml += trChildsH;
             } else
                 finishInHtml += trChildsH;

@@ -24,7 +24,7 @@ $(function() {
                 $('.nav-result').addClass("disabled");
                 $('.nav-upload ').addClass("disabled");
                 $(this).text('点击登录').off('click').on('click', function() {
-                    window.location.href = "../signin.html";
+                    window.location.href = "../login/signin.html";
                 });
             }, (err) => {
                 console.log(err);

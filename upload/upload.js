@@ -34,11 +34,10 @@ $(function() {
         var unicode = '';
         var filesdata = [];
         const files = $('#file')[0].files;
-        const time = $('#time').val();
+        const time = $('#time').val().replace(/\-/g, '/'); //时间格式兼容ios
         const des = $('#des').val();
 
         const exptime = new Date(time);
-
         /* 有文件和时间时才能上传 */
         if (files.length == 0 || !time) {
             $('.info-alarm').removeClass('unshow');
