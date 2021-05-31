@@ -23,18 +23,18 @@ https://boilerwarrior.github.io/FileQueryApp
 根据查询码和文件表中的部分关键个人信息（名字+学号/身份证号...），若信息和查询码无误则服务端返回文件中对应的个人信息内容。
 点击确认信息是否有误。
 
-![query](desImages/query.png)
+![queryImg](desImages/query.png)
 ### 查询结果
 登录用户点击查询当前账号下已经生成查询记录（一条记录对应一条查询码）。
 点击查看对应的详细信息，包括文件内容，对应的确认情况。
 
-![result](./desImages/result.png)
+![resultImg](./desImages/result.png)
 ## 注
 * 上传文文件最好为.xlsx/.xlsx，不支持图片文件。
 * 文件不要含有标题一类格式与信息内容不一致的内容。    
   - 正确示例
   
-![filedata](./desImages/filedata.png)
+![filedataImg](./desImages/filedata.png)
   - 错误示例：
   
-![filedata](./desImages/wrongdata.png)
+![filedataImg](./desImages/wrongdata.png)
