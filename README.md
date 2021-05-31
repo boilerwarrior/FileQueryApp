@@ -1,4 +1,4 @@
-# FIleQueryApp
+# FileQueryApp
 
 ## 简介
 使用githubpage+severless服务提供信息查询确认。
